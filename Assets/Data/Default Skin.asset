@@ -11,3 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce36bbda496b6c84eb98c054ae27526a, type: 3}
   m_Name: Default Skin
   m_EditorClassIdentifier: 
+  buttonSprite: {fileID: 21300000, guid: 0e24fe35792744711b7dfef097572607, type: 3}
+  buttonSpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 7bd39cba378e14f9197bcf68374fb122,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 5bf27d9a625ed45658a4f9bb0772093e, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 181a33a926d114f2986db2828e3a1411, type: 3}
