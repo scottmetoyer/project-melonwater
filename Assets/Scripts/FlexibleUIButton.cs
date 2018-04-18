@@ -5,10 +5,22 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
 [RequireComponent(typeof(Image))]
-public class FlexibleUIButton : FlexibleUI {
-  
+public class FlexibleUIButton : FlexibleUI
+{
+
+    public enum ButtonType
+    {
+        Default,
+        Confirm,
+        Decline,
+        Warning
+    }
+
     Image image;
+    Image icon;
     Button button;
+    public ButtonType buttonType;
+
 
     protected override void OnSkinUI()
     {
@@ -16,6 +28,7 @@ public class FlexibleUIButton : FlexibleUI {
 
         image = GetComponent<Image>();
         button = GetComponent<Button>();
+        icon = transform.Find("Icon").GetComponent<Image>();
 
         button.transition = Selectable.Transition.SpriteSwap;
         button.targetGraphic = image;
@@ -24,5 +37,29 @@ public class FlexibleUIButton : FlexibleUI {
         button.spriteState = skinData.buttonSpriteState;
 
         image.type = Image.Type.Sliced;
+
+        switch (buttonType)
+        {
+            case ButtonType.Confirm:
+                image.color = skinData.confirmColor;
+                icon.sprite = skinData.confirmIcon;
+                break;
+
+            case ButtonType.Decline:
+                image.color = skinData.declineColor;
+                icon.sprite = skinData.declineIcon;
+                break;
+
+            case ButtonType.Default:
+                image.color = skinData.defaultColor;
+                icon.sprite = skinData.defaultIcon;
+                break;
+
+            case ButtonType.Warning:
+                image.color = skinData.warningColor;
+                icon.sprite = skinData.warningIcon;
+                break;
+
+        }
     }
 }
