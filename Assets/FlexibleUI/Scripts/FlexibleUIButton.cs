@@ -17,6 +17,8 @@ public class FlexibleUIButton : FlexibleUI
     }
 
     Image image;
+
+    [SerializeField]
     Image icon;
     Button button;
     public ButtonType buttonType;
@@ -27,7 +29,7 @@ public class FlexibleUIButton : FlexibleUI
         base.OnSkinUI();
 
         image = GetComponent<Image>();
-        icon = transform.Find("Icon").GetComponent<Image>();
+        // icon = transform.Find("Icon").GetComponent<Image>();
         button = GetComponent<Button>();
 
         button.transition = Selectable.Transition.SpriteSwap;

@@ -19,7 +19,7 @@ public class FlexibleUI : MonoBehaviour
 
     public virtual void Update()
     {
-        // This shouldn't make it into production
+        // This shouldn't make it into production, make a custom editor
         if (Application.isEditor)
         {
             OnSkinUI();
