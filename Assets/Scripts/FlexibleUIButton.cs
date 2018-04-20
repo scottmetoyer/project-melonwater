@@ -27,16 +27,15 @@ public class FlexibleUIButton : FlexibleUI
         base.OnSkinUI();
 
         image = GetComponent<Image>();
-        button = GetComponent<Button>();
         icon = transform.Find("Icon").GetComponent<Image>();
+        button = GetComponent<Button>();
 
         button.transition = Selectable.Transition.SpriteSwap;
         button.targetGraphic = image;
 
         image.sprite = skinData.buttonSprite;
-        button.spriteState = skinData.buttonSpriteState;
-
         image.type = Image.Type.Sliced;
+        button.spriteState = skinData.buttonSpriteState;
 
         switch (buttonType)
         {
