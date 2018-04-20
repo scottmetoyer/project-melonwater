@@ -5,7 +5,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class FlexibleUI : MonoBehaviour
 {
-
     public FlexibleUIData skinData;
 
     protected virtual void OnSkinUI()
